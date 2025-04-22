@@ -1,11 +1,14 @@
+import { fail, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-export const load = (async () => {
+export const load = (async ({ locals }) => {
+	if (locals.user && locals.session) {
+		redirect(303, '/admin/dashboard'); // Redirect to the dashboard if already logged in
+	}
 	return {};
 }) satisfies PageServerLoad;
 
 import type { Actions } from './$types';
-import { fail, redirect } from '@sveltejs/kit';
 import { auth } from '$lib/server/auth-server';
 import { setCookiesFromHeader } from '$lib/server/utils/set-cookie';
 
@@ -39,6 +42,6 @@ export const actions: Actions = {
 		const setCookie = response.headers.get('set-cookie');
 		setCookiesFromHeader(setCookie, cookies);
 
-		throw redirect(303, '/dashboard'); // Redirect to the dashboard after successful login
+		redirect(303, '/admin/dashboard'); // Redirect to the dashboard after successful login
 	}
 };

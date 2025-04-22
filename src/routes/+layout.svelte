@@ -21,7 +21,7 @@
 
 <nav class="flex items-center justify-between bg-gray-800 p-4">
 	<div>
-		<a href="/dashboard" class="text-blue-500 hover:underline">Dashboard</a>
+		<a href="/admin/admin/dashboard" class="text-blue-500 hover:underline">Dashboard</a>
 		{#if !page.data.user}
 			<a href="/login" class="text-blue-500 hover:underline">Login</a>
 			<a href="/signup" class="text-blue-500 hover:underline">Sign Up</a>

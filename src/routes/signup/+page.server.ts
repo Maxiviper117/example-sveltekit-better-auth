@@ -48,6 +48,6 @@ export const actions: Actions = {
 		const setCookie = response.headers.get('set-cookie');
 		setCookiesFromHeader(setCookie, cookies);
 
-		throw redirect(303, '/dashboard'); // Redirect to the dashboard after successful login
+		redirect(303, '/admin/dashboard'); // Redirect to the dashboard after successful login
 	}
 };

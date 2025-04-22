@@ -27,7 +27,6 @@
 				id="name"
 				name="name"
 				type="text"
-                value="David"
 				required
 				class="w-full rounded border px-3 py-2 focus:border-blue-400 focus:ring focus:outline-none"
 			/>
@@ -38,7 +37,6 @@
 				id="email"
 				name="email"
 				type="email"
-                value="text@example.com"
 				required
 				class="w-full rounded border px-3 py-2 focus:border-blue-400 focus:ring focus:outline-none"
 			/>
